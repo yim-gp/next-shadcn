@@ -17,6 +17,7 @@ import {
   IconSettings,
   IconUsers,
   IconBuildingStore,
+  IconPercentage20
 } from "@tabler/icons-react"
 import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
@@ -46,9 +47,9 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
-      icon: IconListDetails,
+      title: "Components",
+      url: "/components",
+      icon: IconPercentage20,
     },
     {
       title: "Analytics",
