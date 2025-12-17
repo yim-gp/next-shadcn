@@ -8,11 +8,10 @@ export default function Page() {
         <>
 
             <SectionCards />
-            <div className="px-4  lg:px-6">
-                <ChartAreaInteractive />
-                <div className="h-6" />
-                <DataTable data={data} />
-            </div>
+            <div className="h-4" />
+            <ChartAreaInteractive />
+            <div className="h-4" />
+            <DataTable data={data} />
         </>
     )
 }
