@@ -55,6 +55,16 @@ const data = {
       url: "/charts",
       icon: IconChartAreaLine,
     },
+    {
+      title: "Reports",
+      url: "/reports",
+      icon: IconReport,
+    },
+    {
+      title: "Forms",
+      url: "/forms",
+      icon: IconFileDescription,
+    },
   ],
   // navClouds: [
   //   {
