@@ -9,15 +9,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  // Reduce client bundle by enforcing per-member imports where possible
-  modularizeImports: {
-    "lucide-react": {
-      transform: "lucide-react/{{member}}",
-    },
-    "@tabler/icons-react": {
-      transform: "@tabler/icons-react/{{member}}",
-    },
-  },
+  // Keep config minimal to avoid disrupting package imports
   compiler: {
     // Strip console.* in production builds
     removeConsole: true,
