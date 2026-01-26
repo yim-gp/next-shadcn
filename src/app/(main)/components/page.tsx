@@ -18,6 +18,13 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, Di
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
+import { SortableListDemo } from "@/components/ui/sortable-list-demo";
+import { SortableGridDemo } from "@/components/ui/sortable-grid-demo";
+import { RadixFormDemo } from "@/components/ui/radix-form-demo";
+import { RadixAnimationDemo } from "@/components/ui/radix-animation-demo";
+import { CustomTabs } from "@/components/ui/custom-tabs";
+import { CustomAccordion } from "@/components/ui/custom-accordion";
+import { NestedContextMenuDemo } from "@/components/ui/nested-context-menu-demo";
 import { Field, FieldContent, FieldDescription, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle } from "@/components/ui/field";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Input } from "@/components/ui/input";
@@ -144,8 +151,23 @@ export default function Page() {
     function onClick(adjustment: number) {
         setGoal(Math.max(200, Math.min(400, goal + adjustment)))
     }
+    // ...existing code...
+    // WizardDialog import
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { WizardDialog } = require("@/components/ui/wizard-dialog");
     return (
         <>
+            <b>Multi-step Dialog (Wizard)</b>
+            <div className="my-4">
+                <WizardDialog />
+            </div>
+            <Separator className="my-4" />
+
+            <b>Nested Context Menu (หลายระดับ)</b>
+            <div className="my-4">
+                <NestedContextMenuDemo />
+            </div>
+            <Separator className="my-4" />
             <b>
                 Accordion
             </b>
@@ -2016,6 +2038,50 @@ export default function Page() {
                     </TooltipContent>
                 </Tooltip>
             </div>
+            <Separator className="my-4" />
+            <b>Drag & Drop Sortable List 1D</b>
+            <div className="my-4">
+                <SortableListDemo />
+            </div>
+            <Separator className="my-4" />
+            <b>Drag & Drop Sortable Grid 2D</b>
+            <div className="my-4">
+                <SortableGridDemo />
+            </div>
+            <Separator className="my-4" />
+            <b>Radix + React Hook Form Demo</b>
+            <div className="my-4">
+                <RadixFormDemo />
+            </div>
+            <Separator className="my-4" />
+            <b>Radix Animation & Transition Demo</b>
+            <div className="my-4">
+                <RadixAnimationDemo />
+            </div>
+            <Separator className="my-4" />
+            <b>Custom Tabs (Radix Primitives)</b>
+            <div className="my-4">
+                <CustomTabs
+                    tabs={[
+                        { value: "tab1", label: "Tab 1", content: <div>เนื้อหาแท็บ 1</div> },
+                        { value: "tab2", label: "Tab 2", content: <div>เนื้อหาแท็บ 2</div> },
+                        { value: "tab3", label: "Tab 3", content: <div>เนื้อหาแท็บ 3</div> },
+                    ]}
+                />
+            </div>
+            <Separator className="my-4" />
+
+            <b>Custom Accordion (Radix Primitives)</b>
+            <div className="my-4">
+                <CustomAccordion
+                    items={[
+                        { value: "item1", label: "หัวข้อ 1", content: <div>รายละเอียดหัวข้อ 1</div> },
+                        { value: "item2", label: "หัวข้อ 2", content: <div>รายละเอียดหัวข้อ 2</div> },
+                        { value: "item3", label: "หัวข้อ 3", content: <div>รายละเอียดหัวข้อ 3</div> },
+                    ]}
+                />
+            </div>
+            <Separator className="my-4" />
         </>
     )
 }
